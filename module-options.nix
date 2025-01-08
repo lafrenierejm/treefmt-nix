@@ -30,25 +30,22 @@ let
     type = types.submodule {
       freeformType = configFormat.type;
       options = {
-        global = {
-          excludes = mkOption {
-            description = "A global list of paths to exclude. Supports glob.";
-            type = types.listOf types.str;
-            default = [ ];
-            example = [ "./node_modules/**" ];
-          };
-
-          on-unmatched = mkOption {
-            description = "Log paths that did not match any formatters at the specified log level.";
-            type = types.enum [
-              "debug"
-              "info"
-              "warn"
-              "error"
-              "fatal"
-            ];
-            default = "warn";
-          };
+        excludes = mkOption {
+          description = "A global list of paths to exclude. Supports glob.";
+          type = types.listOf types.str;
+          default = [ ];
+          example = [ "./node_modules/**" ];
+        };
+        on-unmatched = mkOption {
+          description = "Log paths that did not match any formatters at the specified log level.";
+          type = types.enum [
+            "debug"
+            "info"
+            "warn"
+            "error"
+            "fatal"
+          ];
+          default = "warn";
         };
 
         formatter = mkOption {
