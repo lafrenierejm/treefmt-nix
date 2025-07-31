@@ -15,6 +15,9 @@ in
       name = "typos";
       args = [
         "--write-changes"
+
+        # Treefmt may pass files otherwise ignored by typos (e.g. patterns ignored in typos.toml).
+        # '--force-exclude' stops typos from acting on any ignored files
         "--force-exclude"
       ];
       includes = [ "*" ];
