@@ -13,7 +13,10 @@ in
   imports = [
     (mkFormatterModule {
       name = "typos";
-      args = [ "--write-changes" ];
+      args = [
+        "--write-changes"
+        "--force-exclude"
+      ];
       includes = [ "*" ];
     })
   ];
